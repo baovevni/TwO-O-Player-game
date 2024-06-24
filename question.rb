@@ -1,30 +1,17 @@
-=begin
+class Question
+  attr_reader :number1, :number2
 
-Question
-Role: Generates and represents a math question.
-Attributes:
-number1
-number2
-Rudderbot
-APP
- — Today at 1:53 PM
-Olukayode Osoba is assisting.
-Larry AI
-APP
- — Today at 1:54 PM
-Methods:
-initialize: Generates two random numbers.
-s.
-ask_question: Returns the question as a string.
-correct_answer: Returns the correct answer.
+  def initialize
+    @number1 = rand(1..20)
+    @number2 = rand(1..20)
+  end
 
+  def ask_question
+    "What does #{@number1} plus #{@number2} equal?"
+  end
 
-Answer
-Role: Verifies if the answer provided is correct.
-Attributes:
-question
-`
-player_answer
-Methods:
-correct?: Compares the player's answer to the correct answer.
-=end
+  def correct_answer
+    @number1 + @number2
+  end
+
+end
